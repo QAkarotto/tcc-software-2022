@@ -1,5 +1,5 @@
 [
-    ![alt text](Goku.png "Meus contatos.")
+    ![alt text](https://i.imgur.com/VOsEXvi.png "Meus contatos.")
     ](https://about.me/QAkarotto)
 
 # TCC
@@ -10,7 +10,7 @@ Repositório contendo os arquivos desenvolvidos durante o trabalho de conclusão
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-    <img src="logo/admink_logo.png" alt="Logo" width="400">
+    <img src="admink/logo/admink_logo.png" alt="Logo" width="400">
   </a>
   <h4 align="center">
     System for support administration of tattoo studios
