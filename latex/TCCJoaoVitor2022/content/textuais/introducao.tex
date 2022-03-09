@@ -1,0 +1,44 @@
+% INTRODUÇÃO-------------------------------------------------------------------
+
+\chapter{INTRODUÇÃO}
+\label{chap:introducao}
+
+Softwares são suscetíveis a falhas em seu funcionamento, as quais são inconsistências entre o comportamento desejado do software e o comportamento apresentado pelo software desenvolvido. Essas falhas e inconsistências podem chegar até o usuário final, tendo potencial de gerar prejuízos à imagem do software e de seus responsáveis e até mesmo prejuízos financeiros. Entretanto a ausência de falhas não é a única característica de um software de qualidade, mas também abrange questões como a conformidade do comportamento do software com o que se propõe a fazer e até mesmo quão bem o software se comporta. Ou seja, além de estar livre de falhas o software deve atender as necessidades e expectativas de seus usuários. Dada a importância de se desenvolver software com qualidade, é fundamental que existam atividades de teste em projetos de desenvolvimento de software como forma de evitar que um software com baixa qualidade chegue ao usuário final.
+
+Antes do surgimento do manifesto ágil, era comum que as atividades de teste de software fossem realizadas após o desenvolvimento do software ter sido finalizado. Além disso, geralmente os testes eram realizados de forma manual por equipes especializadas e dedicadas à realização de testes. 
+
+Após o surgimento dos métodos ágeis, as atividades de teste passaram a ser mais valorizadas em qualquer tipo de software, e sofreram mudanças na forma como são executadas. Muitos testes passaram a ser automatizados, possibilitando que, além da detecção de erros, seja assegurado o correto funcionamento do software após alterações e também que os testes sirvam como documentação para o código desenvolvido. \cite{Valente2020}. Também é comum que as atividades de teste sejam realizadas pela própria equipe que realiza o desenvolvimento do software, não mais existindo fases e equipes dedicadas exclusivamente a realização de testes.
+
+Para \citeonline{Crispin2009}, os testes manuais levam muito tempo e tendem a levar mais tempo a cada nova iteração, demandando que cada vez mais pessoas precisem dedicar tempo à realização de testes manuais, aumentando o débito técnico e a frustração. Os testes automatizados fornecem \emph{feedback} rapidamente e frequentemente, através da execução de testes sempre que há escrita de código novo. Erros causados por alterações no comportamento do software devido às mudanças do código podem ser detectados, possibilitando que as correções ocorram rapidamente. A automação de testes proporciona a redução do tempo necessário para execução dos testes de um software quando ele sofre atualizações, além da criação automática de relatórios sobre a execução dos testes automatizados.
+
+É consenso entre os profissionais que desenvolvem software que é necessário testar o código desenvolvido, mas  as atividades de escrita de código de testes são frequentemente deixadas de lado devido à urgência e à pressão para terminar um projeto. Quanto maior a urgência e a pressão, menos testes são escritos. Escrevendo menos testes a produtividade diminui, pois o código torna-se menos estável. Consequentemente, com menor produtividade, a urgência e a pressão aumentam, alimentando um ciclo que leva os profissionais a exaustão. A melhor forma de persuasão sobre o valor da criação de \emph{scripts} de teste é implementando os testes em um projeto de desenvolvimento real, mostrando na prática o real valor do \emph{feedback} rápido fornecido pela execução dos testes e os benefícios que oferecem para a refatoração de código \cite{beck1998test}.
+
+A criação dos \emph{scripts} de testes automatizados demanda tempo, mas os benefícios de sua implementação geram redução de tempo em outras atividades do projeto, como a execução dos testes, economizando cada vez mais tempo e esforço a longo prazo. Entretanto para implementar testes automatizados são necessários conhecimentos sobre planejamento de testes, codificação e ferramentas para criação e execução de \emph{scripts} de testes automatizados.
+
+Dito isso é de importante estudar a implementação de testes automatizados em projetos reais de desenvolvimento de software, buscando explorar as práticas necessárias para implementação dos mesmos, além dos benefícios e as dificuldades enfrentadas para sua implementação. Este trabalho se propõe a realizar tal estudo com intuito de fornecer recomendações para a implementação de testes automatizados, dados seus benefícios e importância.
+
+\section{OBJETIVO GERAL}
+
+O objetivo deste trabalho é propor um método para implementação de testes automatizados em projetos de software.
+
+\section{OBJETIVOS ESPECÍFICOS}
+Com base no objetivo geral, foram definidos objetivos específicos:
+
+\begin{itemize}
+    \item Buscar na literatura processos de realização de teste de software e implementação de testes automatizados;
+    \item Definir uma forma de representação dos cenários de teste baseada em mapas mentais para facilitar a definição dos testes a serem feitos;
+    \item Inserir o processo de testes no fluxo de trabalho de métodos ágeis;
+    \item Apresentar um estudo de caso do uso de testes em um software desenvolvido anteriormente chamado Sistema Admink;
+    \item Definir um conjunto de recomendações para aplicação de testes automatizados de integração.
+    
+\end{itemize}
+
+\section{ORGANIZAÇÃO DO TEXTO}
+O texto deste trabalho está disposto da seguinte forma:
+\begin{itemize}
+    \item \autoref{chap:processos-de-software}: Aborda os processos de produção de software, suas características e evolução ao longo do tempo;
+    \item \autoref{chap:teste-de-software}: Descreve conceitos e práticas de teste de software e testes automatizados;
+    \item \autoref{chap:metodologia}: Detalha o material e os métodos utilizados na implementação de testes automatizados neste estudo;
+    \item \autoref{chap:resultados}: Mostra os resultados obtidos após a implementação e execução dos testes automatizados e as recomendações propostas;
+    \item \autoref{chap:conclusao}: Explora as conclusões alcançadas.
+\end{itemize}

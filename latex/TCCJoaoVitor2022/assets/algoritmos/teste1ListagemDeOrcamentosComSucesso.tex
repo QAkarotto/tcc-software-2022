@@ -1,0 +1,27 @@
+\begin{lstlisting}[language=PHP, caption= Script do teste teste1ListagemDeOrcamentosComSucesso,label={code:teste1ListagemDeOrcamentosComSucesso}]
+
+public function teste1ListagemDeOrcamentosComSucesso()
+    {
+        $user = factory(User::class)->create();
+        $estudio = factory(Estudio::class)->create();
+        factory(EstudioUsers::class)->create(['fk_users_id_users' => $user->id, 'fk_estudio_id_estudio' => $estudio->id_estudio]);
+        $artista = factory(Artista::class)->create();
+        $cliente = factory(Cliente::class)->create();
+        factory(ArtistaEstudio::class)->create(['fk_artista_id_artista' => $artista->id_artista, 'fk_estudio_id_estudio' => $estudio->id_estudio]);
+        factory(ClienteEstudio::class)->create(['fk_cliente_id_cliente' => $cliente->id_cliente, 'fk_estudio_id_estudio' => $estudio->id_estudio]);
+        $orcamento = factory(Orcamento::class)->create(['fk_cliente_id_cliente' => $cliente->id_cliente, 'fk_artista_id_artista' => $artista->id_artista, 'fk_estudio_id_estudio' => $estudio->id_estudio, 'fk_orcamento_status_id_orcamento_status' => 1]);
+        $orcamento2 = factory(Orcamento::class)->create(['fk_cliente_id_cliente' => $cliente->id_cliente, 'fk_artista_id_artista' => $artista->id_artista, 'fk_estudio_id_estudio' => $estudio->id_estudio, 'fk_orcamento_status_id_orcamento_status' => 1]);
+
+        $response = $this->actingAs($user)
+            ->get('/admin/orcamentos');
+
+        $response->assertStatus(200);
+        $response->assertSee('<td class="align-middle">' . $orcamento->tatuagem_nome . '</td>', $escaped = false);
+        $response->assertSee('<td class="align-middle">#' . str_pad($orcamento->id_orcamento, 5, '0', STR_PAD_LEFT) . '</td>', $escaped = false);
+        $response->assertSee('<td class="align-middle">' . $orcamento2->tatuagem_nome . '</td>', $escaped = false);
+        $response->assertSee('<td class="align-middle">#' . str_pad($orcamento2->id_orcamento, 5, '0', STR_PAD_LEFT) . '</td>', $escaped = false);
+    }
+    
+\end{lstlisting}
+
+\fonte{o Autor}

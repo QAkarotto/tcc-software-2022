@@ -1,0 +1,71 @@
+\begin{lstlisting}[language=PHP, caption= Script de testes \textbf{teste1CriacaoDeOrcamentoComSucessoDadosCorretos} e \textbf{teste2CriacaoDeOrcamentoComFalhaDadosObrigatorioVazios}  que testam a criação de orçamentos com sucesso e falha respectivamente, label={code:CriacaoDeOrcamentoTest1E2}]
+
+public function teste1CriacaoDeOrcamentoComSucessoDadosCorretos()
+    {
+        $user = factory(User::class)->create();
+        $estudio = factory(Estudio::class)->create();
+        factory(EstudioUsers::class)->create(['fk_users_id_users' => $user->id, 'fk_estudio_id_estudio' => $estudio->id_estudio]);
+        $artista = factory(Artista::class)->create();
+        $cliente = factory(Cliente::class)->create();
+        factory(ArtistaEstudio::class)->create(['fk_artista_id_artista' => $artista->id_artista, 'fk_estudio_id_estudio' => $estudio->id_estudio]);
+        factory(ClienteEstudio::class)->create(['fk_cliente_id_cliente' => $cliente->id_cliente, 'fk_estudio_id_estudio' => $estudio->id_estudio]);
+
+
+        $response = $this->actingAs($user)
+            ->post('/admin/orcamentos', [
+                'cliente'               => $cliente->id_cliente,
+                'artista'               => $artista->id_artista,
+                'tatuagem_nome'         => 'Teste Orçamento',
+                'tatuagem_local'        => 'Teste',
+                'tatuagem_comprimento'  => 10,
+                'tatuagem_largura'      => 10,
+                'tatuagem_descricao'    => 'Teste Orçamento Criado com Sucesso!',
+                'tatuagem_referencias'  => null,
+                'canal_contato'         => null,
+                'tempo_estimado'        => null,
+                'valor'                 => null,
+                'uso_materiais'         => null,
+                'complexidade'          => null,
+                'observacao'            => null
+            ]);
+        $response->assertStatus(302);
+        $response->assertSessionHas('success_toastr', 'O orçamento foi cadastrado com sucesso!');
+    }
+
+    public function teste2CriacaoDeOrcamentoComFalhaDadosObrigatorioVazios()
+    {
+        $user = factory(User::class)->create();
+        $estudio = factory(Estudio::class)->create();
+        factory(EstudioUsers::class)->create(['fk_users_id_users' => $user->id, 'fk_estudio_id_estudio' => $estudio->id_estudio]);
+
+        $response = $this->actingAs($user)
+            ->post('/admin/orcamentos', [
+                'cliente'               => null,
+                'artista'               => null,
+                'tatuagem_nome'         => '',
+                'tatuagem_local'        => '',
+                'tatuagem_comprimento'  => null,
+                'tatuagem_largura'      => null,
+                'tatuagem_descricao'    => '',
+                'tatuagem_referencias'  => null,
+                'canal_contato'         => null,
+                'tempo_estimado'        => null,
+                'valor'                 => null,
+                'uso_materiais'         => null,
+                'complexidade'          => null,
+                'observacao'            => null
+            ]);
+
+        $response->assertStatus(302);
+        $this->assertEquals(session('errors')->get('cliente')[0], 'O campo cliente é obrigatório.');
+        $this->assertEquals(session('errors')->get('artista')[0], 'O campo artista é obrigatório.');
+        $this->assertEquals(session('errors')->get('tatuagem_nome')[0], 'O campo tatuagem nome é obrigatório.');
+        $this->assertEquals(session('errors')->get('tatuagem_local')[0], 'O campo tatuagem local é obrigatório.');
+        $this->assertEquals(session('errors')->get('tatuagem_comprimento')[0], 'O campo tatuagem comprimento é obrigatório.');
+        $this->assertEquals(session('errors')->get('tatuagem_largura')[0], 'O campo tatuagem largura é obrigatório.');
+        $this->assertEquals(session('errors')->get('tatuagem_descricao')[0], 'O campo tatuagem descricao é obrigatório.');
+    }
+    
+\end{lstlisting}
+
+\fonte{o Autor}

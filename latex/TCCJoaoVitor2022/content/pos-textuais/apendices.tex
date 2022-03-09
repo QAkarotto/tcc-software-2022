@@ -1,0 +1,88 @@
+% APÊNDICES--------------------------------------------------------------------
+\renewcommand{\figurename}{Quadro}
+\setcounter{figure}{0}
+\begin{apendicesenv}
+\partapendices
+
+% Primeiro apêndice------------------------------------------------------------
+\chapter{Descrição dos casos de uso do Sistema Admink}
+\label{chap:apendiceA}
+
+    \begin{figure}[!htb]
+	    \centering
+	    \sbox0{\includegraphics[width=1\textwidth]{./assets/apendices/UC01Admink}}% measure width
+	    \begin{minipage}{\wd0}
+		    \usebox0
+		    \caption[]{UC01: Efetuar Login}
+		    \label{fig:uc1-admink}
+		    \fonte{o Autor}
+	    \end{minipage}
+    \end{figure}
+    
+
+    \begin{figure}[!htb]
+	    \centering
+	    \sbox0{\includegraphics[width=1\textwidth]{./assets/apendices/UC04Admink}}% measure width
+	    \begin{minipage}{\wd0}
+		    \usebox0
+		    \caption[]{UC04: Manter Orçamentos}
+		    \label{fig:uc4-admink}
+		    \fonte{o Autor}
+	    \end{minipage}
+    \end{figure}
+
+\chapter{Plano de Testes do Sistema Admink}
+\label{chap:apendiceB}
+
+\setcounter{figure}{0}
+
+    \begin{figure}[!htb]
+	    \centering
+	    \sbox0{\includegraphics[width=1\textwidth]{./assets/apendices/CT01Admink}}% measure width
+	    \begin{minipage}{\wd0}
+		    \usebox0
+		    \caption[]{TC01: Validação Padrão}
+		    \label{fig:tc01-admink}
+		    \fonte{o Autor}
+	    \end{minipage}
+    \end{figure}
+    
+    \begin{figure}[!htb]
+	    \centering
+	    \sbox0{\includegraphics[width=1\textwidth]{./assets/apendices/CT02Admink}}% measure width
+	    \begin{minipage}{\wd0}
+		    \usebox0
+		    \caption[]{TC02: Login}
+		    \label{fig:tc02-admink}
+		    \fonte{o Autor}
+	    \end{minipage}
+    \end{figure}
+    
+    \begin{figure}[!htb]
+	    \centering
+	    \sbox0{\includegraphics[width=1\textwidth]{./assets/apendices/CT04Admink}}% measure width
+	    \begin{minipage}{\wd0}
+		    \usebox0
+		    \caption[]{TC04: Orçamento}
+		    \label{fig:tc04-admink}
+		    \fonte{o Autor}
+	    \end{minipage}
+    \end{figure}
+    
+\chapter{Scripts de Teste de Integração do Sistema Admink}
+\label{chap:apendiceC}
+
+\input{./assets/apendices/scripts/LoginTest}
+
+\input{./assets/apendices/scripts/CriacaoDeOrcamentoTest}
+
+\input{./assets/apendices/scripts/EdicaoDeOrcamentosTest}
+
+\input{./assets/apendices/scripts/ListagemEDelecaoDeOrcamentosTest}
+
+\end{apendicesenv}
+
+
+
+
+

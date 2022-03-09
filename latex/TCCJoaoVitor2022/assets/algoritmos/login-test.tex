@@ -1,0 +1,23 @@
+%Python code highlighting
+\begin{lstlisting}[language=PHP, caption= Cenários de Testes Automatizados de Integração do Login,label={code:logintest}]
+<?php
+
+namespace Tests\Integration\Login;
+
+use Tests\TestCase;
+use App\User;
+
+class LoginTest extends TestCase
+{
+
+    public function teste1LoginComSucessoComEmailESenhaValidos()
+    {
+        $user = factory(User::class)->create();
+        $response = $this->call('POST', '/login', ['email' => $user->email, 'password' => 'teste@123']);
+        $response->assertStatus(302);
+        $response->assertRedirect('/admin/home');
+    }
+    
+\end{lstlisting}
+
+\fonte{o Autor}
