@@ -15,10 +15,10 @@ Repositório contendo os arquivos desenvolvidos durante o trabalho de conclusão
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
+<p align="left">
     <img src="admink/logo/admink_logo.png" alt="Logo" width="400">
   </a>
-  <h4 align="center">
+  <h4 align="left">
     System for support administration of tattoo studios
     <br />
 </h4>
